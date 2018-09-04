@@ -5,7 +5,7 @@ public class GrocerySystem {
     int i = 0;
     //GroceryItemOrderHandler.initGroceryItemList();
     //GroceryItemOrderHandler.printGroceryItemList();
-    public void goShopping(){
+    public static void goShopping(){
         GroceryItemOrderHandler.printGroceryItemList();
     }
 
