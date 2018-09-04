@@ -3,27 +3,33 @@ package grocery;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class GroceryItemOrderHandler {
-
-    FileHandler fileIO = new FileHandler();
+public class GrocerySystem {
 
     // Making ArrayList for objects
 
+
     static ArrayList<GroceryItemOrder> groceryItemList = new ArrayList<GroceryItemOrder>();
+
 
     // Initialising
 
-    public void initGroceryItemList()
+    public static void initGroceryItemList()
     {
-        Scanner input = new Scanner(fileIO.readFile("grocery/GroceryItemData.txt"));
+       FileHandler file = new FileHandler();
+
+        Scanner input = new Scanner(file.readFile("GroceryItemData.txt"));
 
         while (input.hasNextLine())
         {
             String fileLine = input.nextLine();
             Scanner item = new Scanner(fileLine);
+            System.out.println("---------------------------------");
             int quantity = item.nextInt();
+            System.out.println("---------------------------------");
             int pricePrItem = item.nextInt();
-            String name = item.next();
+            System.out.println("---------------------------------");
+            String nameTemp = item.nextLine();
+            String name = nameTemp.substring(1,nameTemp.length());
 
             groceryItemList.add(new GroceryItemOrder(quantity, pricePrItem, name));
         }
@@ -31,7 +37,7 @@ public class GroceryItemOrderHandler {
 
     // Show list of all reservations
 
-    public void printGroceryItemList()
+    public static void printGroceryItemList()
     {
         System.out.println("GROCERY ITEMS");
         System.out.println();

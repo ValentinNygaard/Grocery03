@@ -2,22 +2,18 @@ package grocery;
 
 public class GroceryItemOrder {
 
-    private String name;
     private int quantity;
     private double pricePrUnit;
+    private String name;
 
-    public GroceryItemOrder(String name, int quantity, double pricePrUnit) {
-        this.name = name;
+    public GroceryItemOrder(int quantity, double pricePrUnit,String name) {
         this.quantity = quantity;
         this.pricePrUnit = pricePrUnit;
+        this.name = name;
     }
 
     public double getCost() {
         return quantity*pricePrUnit;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getQuantity() {
@@ -28,8 +24,8 @@ public class GroceryItemOrder {
         return pricePrUnit;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     public void setQuantity(int quantity) {
@@ -38,6 +34,10 @@ public class GroceryItemOrder {
 
     public void setPricePrUnit(double pricePrUnit) {
         this.pricePrUnit = pricePrUnit;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String toString() {
