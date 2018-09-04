@@ -1,4 +1,4 @@
-323,3,Apple
-234,20,Cookies
-234,10,Milk
-234,25,Cereal
+323 3 Apple
+234 20 Cookies
+234 10 Milk
+234 25 Cereal
