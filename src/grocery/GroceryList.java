@@ -2,35 +2,41 @@ package grocery;
 
 public class GroceryList {
 
-    static GroceryItemOrder shoppingList[] = new GroceryItemOrder[10];
-    static int shoppingListCounter = 0;
+    // Initializing
+
+    GroceryItemOrder shoppingList[] = new GroceryItemOrder[10];
+    int shoppingListCounter = 0;
+
+    // Add Item to ShoppingList Array
 
     public void addGroceryItemOrder(GroceryItemOrder newItem){
         shoppingList[shoppingListCounter] = newItem;
         shoppingListCounter ++;
     }
 
-    public static void getTotalCost(){
+    // Calculate totalCost and print content of shoppingBasket and totalCost
+
+    public void getTotalCost(){
         double totalCost = 0;
         System.out.println("GROCERY SHOPPING BASKET");
         System.out.println();
-        System.out.println("  #  Name                        Item Price  Quantity   Price");
-        System.out.println("---------------------------------------------------------------");
+        System.out.println("  Item                        Item Price  Quantity    Cost");
+        System.out.println("------------------------------------------------------------");
         for (int i=0; i<shoppingListCounter; i++)
         {
             totalCost += shoppingList[i].getCost();
-            System.out.printf("%3d",(i+1));
             System.out.printf("  ");
             System.out.printf("%-30s",shoppingList[i].getName());
             System.out.printf("%8.2f",shoppingList[i].getPricePrUnit());
-            System.out.printf("%7d",shoppingList[i].getQuantity());
+            System.out.printf("%10d",shoppingList[i].getQuantity());
             System.out.printf("%8.2f",shoppingList[i].getCost());
             System.out.println();
         }
         //System.out.println();
-        System.out.println("---------------------------------------------------------------");
-        System.out.print("Total cost");
-        System.out.printf("%55.2f",totalCost);
+        System.out.println("------------------------------------------------------------");
+        System.out.print("  Total cost");
+        System.out.printf("%46.2f",totalCost);
+        System.out.println();
         System.out.println();
     }
 }

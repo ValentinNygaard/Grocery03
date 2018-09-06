@@ -6,7 +6,7 @@ public class GroceryItemOrder {
     private double pricePrUnit;
     private String name;
 
-    public GroceryItemOrder(int quantity, double pricePrUnit,String name) {
+    GroceryItemOrder(int quantity, double pricePrUnit,String name) {
         this.quantity = quantity;
         this.pricePrUnit = pricePrUnit;
         this.name = name;

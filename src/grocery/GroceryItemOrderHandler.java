@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 public class GroceryItemOrderHandler {
 
-    // Making ArrayList for objects
+    // Making ArrayList for Grocery Item objects
 
-    static ArrayList<GroceryItemOrder> groceryItemList = new ArrayList<GroceryItemOrder>();
+    ArrayList<GroceryItemOrder> groceryItemList = new ArrayList<GroceryItemOrder>();
 
-    // Initialising
+    // Filling ArrayList with Grocery object Items and loading object content from file
 
-    public static void initGroceryItemList()
+    public void initGroceryItemList()
     {
         FileHandler file = new FileHandler();
 
@@ -30,13 +30,13 @@ public class GroceryItemOrderHandler {
         }
     }
 
-    // Show list of all reservations
+    // Print list of Grocery Items
 
-    public static void printGroceryItemList()
+    public void printGroceryItemList()
     {
-        System.out.println("GROCERY ITEMS");
+        System.out.println("GROCERY ITEMS LIST ");
         System.out.println();
-        System.out.println("  #  Name                     Price pr item");
+        System.out.println("  #  Item                        Item price");
         System.out.println("---------------------------------------------");
         for (int i=0; i<groceryItemList.size(); i++)
         {

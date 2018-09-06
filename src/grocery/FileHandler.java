@@ -6,6 +6,7 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class FileHandler {
+
     // Reading from file
 
     public String readFile(String fileName)
