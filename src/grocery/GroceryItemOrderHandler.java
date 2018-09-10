@@ -1,5 +1,7 @@
 package grocery;
 
+// Handling collection of Grocery Items - Reading data from file with help of FileHandler Class
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

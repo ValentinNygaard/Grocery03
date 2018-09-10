@@ -1,5 +1,7 @@
 package grocery;
 
+// Model for grocery item data + simple cost calc method
+
 public class GroceryItemOrder {
 
     private int quantity;
@@ -42,6 +44,13 @@ public class GroceryItemOrder {
 
     public String toString() {
         return name + " " + quantity + " " + getCost();
+    }
+
+    public String toStringV2(){
+        return String.format("%-30s%8.2f", name, pricePrUnit);
+    }
+    public String toStringV3(){
+        return String.format("%-30s%8.2f%10d%8.2f", name, pricePrUnit, quantity, getCost());
     }
 
 }

@@ -1,5 +1,7 @@
 package grocery;
 
+// Handling user input and system logic
+
 public class GrocerySystem {
 
     public static void goShopping(){
@@ -8,7 +10,7 @@ public class GrocerySystem {
 
         GroceryItemOrderHandler itemHandler = new GroceryItemOrderHandler();
         itemHandler.initGroceryItemList();
-        GroceryList2 shoppingCart = new GroceryList2();
+        GroceryList shoppingCart = new GroceryList();
 
         // Entry user message
 
@@ -39,7 +41,7 @@ public class GrocerySystem {
                 itemHandler.groceryItemList.get(index).setQuantity(quantityChoice);
                 shoppingCart.addGroceryItemOrder(itemHandler.groceryItemList.get(index));
                 shoppingCart.getTotalCost();
-                if (shoppingCart.shoppingListCounter == 5){
+                if (shoppingCart.shoppingListCounter == 10){
                     repeatAddingToCart = false;
                     System.out.println("You have reached the maximum numbers of different shoppingcart items - redirecting to Checkout ");
                     System.out.println();

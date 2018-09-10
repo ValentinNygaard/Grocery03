@@ -1,15 +1,21 @@
 package grocery;
 
+// Handling user input
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class InputHandler
 {
+    // Simple String input - no checks
+
     public static String getString()
     {
         Scanner input = new Scanner(System.in);
         return input.nextLine();
     }
+
+    // String input - only accepting inputs specified in ArrayList parameter
 
     public static String getString(ArrayList<String> options, String errorMessage)
     {
@@ -20,6 +26,8 @@ public class InputHandler
             else System.out.print(errorMessage);
         }
     }
+
+    // String input - only accepting inputs specified in Array parameter
 
     public static String getString(String[] options, String errorMessage)
     {

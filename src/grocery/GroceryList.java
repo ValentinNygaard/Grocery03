@@ -1,5 +1,7 @@
 package grocery;
 
+// Handles list of grocery items shopped - Array version
+
 public class GroceryList {
 
     // Initializing
@@ -16,7 +18,7 @@ public class GroceryList {
 
     // Calculate totalCost and print content of shoppingBasket and totalCost
 
-    public void getTotalCost(){
+    public double getTotalCost(){
         double totalCost = 0;
         System.out.println("GROCERY SHOPPING BASKET");
         System.out.println();
@@ -38,5 +40,14 @@ public class GroceryList {
         System.out.printf("%46.2f",totalCost);
         System.out.println();
         System.out.println();
+        return totalCost;
     }
+    public String toString(){
+        String output = "";
+        for (int i=0; i<shoppingListCounter; i++)
+        {
+            output += "/n"+shoppingList[i].toStringV3();
+        }
+        return output;
+    };
 }

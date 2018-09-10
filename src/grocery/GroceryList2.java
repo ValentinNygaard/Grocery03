@@ -1,5 +1,7 @@
 package grocery;
 
+// Handles list of grocery items shopped - ArrayList version
+
 import java.util.ArrayList;
 
 public class GroceryList2 {

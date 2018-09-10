@@ -1,5 +1,7 @@
 package grocery;
 
+// Handling file reading and writing
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
