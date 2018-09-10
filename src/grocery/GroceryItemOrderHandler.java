@@ -5,15 +5,15 @@ package grocery;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class GroceryItemOrderHandler {
+class GroceryItemOrderHandler {
 
     // Making ArrayList for Grocery Item objects
 
-    ArrayList<GroceryItemOrder> groceryItemList = new ArrayList<GroceryItemOrder>();
+    ArrayList<GroceryItemOrder> groceryItemList = new ArrayList<>();
 
     // Filling ArrayList with Grocery object Items and loading object content from file
 
-    public void initGroceryItemList()
+    void initGroceryItemList()
     {
         FileHandler file = new FileHandler();
 
@@ -26,7 +26,7 @@ public class GroceryItemOrderHandler {
             int quantity = item.nextInt();
             double pricePrItem = item.nextDouble();
             String nameTemp = item.nextLine();
-            String name = nameTemp.substring(1,nameTemp.length());
+            String name = nameTemp.substring(1);
 
             groceryItemList.add(new GroceryItemOrder(quantity,pricePrItem,name));
         }
@@ -34,7 +34,7 @@ public class GroceryItemOrderHandler {
 
     // Print list of Grocery Items
 
-    public void printGroceryItemList()
+    void printGroceryItemList()
     {
         System.out.println("GROCERY ITEMS LIST ");
         System.out.println();
@@ -43,9 +43,8 @@ public class GroceryItemOrderHandler {
         for (int i=0; i<groceryItemList.size(); i++)
         {
             System.out.printf("%3d",(i+1));
-            System.out.printf("  ");
-            System.out.printf("%-30s",groceryItemList.get(i).getName());
-            System.out.printf("%8.2f",groceryItemList.get(i).getPricePrUnit());
+            System.out.print("  ");
+            System.out.print(groceryItemList.get(i).toStringV2());
             System.out.println();
         }
         System.out.println();

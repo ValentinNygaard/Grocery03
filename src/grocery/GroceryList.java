@@ -6,19 +6,19 @@ public class GroceryList {
 
     // Initializing
 
-    GroceryItemOrder shoppingList[] = new GroceryItemOrder[10];
-    int shoppingListCounter = 0;
+    private GroceryItemOrder shoppingList[] = new GroceryItemOrder[10];
+    private int shoppingListCounter = 0;
 
     // Add Item to ShoppingList Array
 
-    public void addGroceryItemOrder(GroceryItemOrder newItem){
+    void addGroceryItemOrder(GroceryItemOrder newItem){
         shoppingList[shoppingListCounter] = newItem;
         shoppingListCounter ++;
     }
 
     // Calculate totalCost and print content of shoppingBasket and totalCost
 
-    public double getTotalCost(){
+    double getTotalCost(){
         double totalCost = 0;
         System.out.println("GROCERY SHOPPING BASKET");
         System.out.println();
@@ -27,12 +27,7 @@ public class GroceryList {
         for (int i=0; i<shoppingListCounter; i++)
         {
             totalCost += shoppingList[i].getCost();
-            System.out.printf("  ");
-            System.out.printf("%-30s",shoppingList[i].getName());
-            System.out.printf("%8.2f",shoppingList[i].getPricePrUnit());
-            System.out.printf("%10d",shoppingList[i].getQuantity());
-            System.out.printf("%8.2f",shoppingList[i].getCost());
-            System.out.println();
+            System.out.println("  " + shoppingList[i].toStringV3());
         }
         //System.out.println();
         System.out.println("------------------------------------------------------------");
@@ -43,11 +38,15 @@ public class GroceryList {
         return totalCost;
     }
     public String toString(){
-        String output = "";
+        StringBuilder output = new StringBuilder();
         for (int i=0; i<shoppingListCounter; i++)
         {
-            output += "/n"+shoppingList[i].toStringV3();
+            output.append("/n").append(shoppingList[i].toStringV3());
         }
-        return output;
-    };
+        return output.toString();
+    }
+
+    int getShoppingListCounter() {
+        return shoppingListCounter;
+    }
 }

@@ -2,15 +2,19 @@ package grocery;
 
 // Handling user input and system logic
 
-public class GrocerySystem {
+class GrocerySystem {
 
-    public static void goShopping(){
+    static void goShopping(){
 
         // Initializing system
 
         GroceryItemOrderHandler itemHandler = new GroceryItemOrderHandler();
         itemHandler.initGroceryItemList();
         GroceryList shoppingCart = new GroceryList();
+
+        final int MAXSHOPPINGLISTITEMS = 10;
+        final int MAXITEMQUANTITY = 99;
+
 
         // Entry user message
 
@@ -35,13 +39,13 @@ public class GrocerySystem {
             else
             {
                 System.out.print("Enter the quantity of the selected item: ");
-                int quantityChoice = InputHandler.getInt(0,99,"Only numbers allowed - Try again: ","Out of range - Try again: "); // Get user input
+                int quantityChoice = InputHandler.getInt(0,MAXITEMQUANTITY,"Only numbers allowed - Try again: ","Out of range - Try again: "); // Get user input
                 System.out.println();
                 int index = menuChoice-1;
                 itemHandler.groceryItemList.get(index).setQuantity(quantityChoice);
                 shoppingCart.addGroceryItemOrder(itemHandler.groceryItemList.get(index));
                 shoppingCart.getTotalCost();
-                if (shoppingCart.shoppingListCounter == 10){
+                if (shoppingCart.getShoppingListCounter() == MAXSHOPPINGLISTITEMS){
                     repeatAddingToCart = false;
                     System.out.println("You have reached the maximum numbers of different shoppingcart items - redirecting to Checkout ");
                     System.out.println();
