@@ -9,7 +9,7 @@ public class GroceryList2 {
     // Initializing
 
     ArrayList<GroceryItemOrder> shoppingList = new ArrayList<GroceryItemOrder>();
-    int shoppingListCounter = 0;
+    private int shoppingListCounter = 0;
 
     // Add Item to ShoppingList ArrayList
 
@@ -29,7 +29,7 @@ public class GroceryList2 {
         for (int i=0; i<shoppingListCounter; i++)
         {
             totalCost += shoppingList.get(i).getCost();
-            System.out.printf("  ");
+            System.out.print("  ");
             System.out.printf("%-30s",shoppingList.get(i).getName());
             System.out.printf("%8.2f",shoppingList.get(i).getPricePrUnit());
             System.out.printf("%10d",shoppingList.get(i).getQuantity());

@@ -13,6 +13,9 @@ public class GroceryItemOrder {
         this.pricePrUnit = pricePrUnit;
         this.name = name;
     }
+    GroceryItemOrder(String name) {
+        this(1,0,name);
+    }
 
     public double getCost() {
         return quantity*pricePrUnit;
